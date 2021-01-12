@@ -61,6 +61,27 @@ function CurrentDay() {
     $("#currentDay").text(currentDate);
 };
 
-
-
 CurrentDay();
+
+$.each(dayHours, function (i, Hours) {
+
+    var row = $("<tr>");
+    row.attr({ "class": "row" });
+    $(".container").append(row);
+
+    var hoursCol = $("<td>");
+    hoursCol.attr({ "class": "col-md-2 hour" });
+    hoursCol.text(Hours.hour);
+    (row).append(hoursCol);
+
+    var eventCol = $("<textarea>");
+    eventCol.attr({ "class": "col-md-8" });
+    (row).append(eventCol);
+
+    var saveBtnCol = $("<button>");
+    var saveBtn = $("<i class='far fa-save fa-lg'></i>")
+    saveBtnCol.attr({ "class": "col-md-1 saveBtn" });
+    (saveBtnCol).append(saveBtn);
+    (row).append(saveBtnCol);
+
+});
