@@ -65,12 +65,12 @@ CurrentDay();
 
 $.each(dayHours, function (i, Hours) {
 
-    var row = $("<tr>");
+    var row = $("<div>");
     row.attr({ "class": "row" });
     $(".container").append(row);
 
-    var hoursCol = $("<td>");
-    hoursCol.attr({ "class": "col-md-2 hour" });
+    var hoursCol = $("<div>");
+    hoursCol.attr({ "class": "col-md-2 hour time-block" });
     hoursCol.text(Hours.hour);
     (row).append(hoursCol);
 
@@ -83,5 +83,20 @@ $.each(dayHours, function (i, Hours) {
     saveBtnCol.attr({ "class": "col-md-1 saveBtn" });
     (saveBtnCol).append(saveBtn);
     (row).append(saveBtnCol);
+
+    eventCol.attr("id", Hours.id);
+    if (Hours.time < moment().format("HH")) {
+        eventCol.attr ({
+            "class": " col-md-8 past", 
+        })
+    } else if (Hours.time === moment().format("HH")) {
+        eventCol.attr({
+            "class": "col-md-8 present"
+        })
+    } else if (Hours.time > moment().format("HH")) {
+        eventCol.attr({
+            "class": "col-md-8 future"
+        })
+    }
 
 });
