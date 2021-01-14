@@ -57,7 +57,7 @@ var dayHours = [
 ]
 
 function CurrentDay() {
-    var currentDate = moment().format('dddd, MMMM Do YYYY, h:mm:ss a');
+    var currentDate = moment().format('dddd, MMMM Do YYYY, h:mm: a');
     $("#currentDay").text(currentDate);
 };
 
@@ -75,7 +75,7 @@ $.each(dayHours, function (i, Hours) {
     (row).append(hoursCol);
 
     var eventCol = $("<textarea>");
-    eventCol.attr({ "class": "col-md-8" });
+    eventCol.attr({ "class": "col-md-8 description" });
     (row).append(eventCol);
 
     var saveBtnCol = $("<button>");
@@ -86,17 +86,28 @@ $.each(dayHours, function (i, Hours) {
 
     eventCol.attr("id", Hours.id);
     if (Hours.time < moment().format("HH")) {
-        eventCol.attr ({
-            "class": " col-md-8 past", 
+        eventCol.attr({
+            "class": " col-md-8 description past",
         })
     } else if (Hours.time === moment().format("HH")) {
         eventCol.attr({
-            "class": "col-md-8 present"
+            "class": "col-md-8 description present"
         })
     } else if (Hours.time > moment().format("HH")) {
         eventCol.attr({
-            "class": "col-md-8 future"
+            "class": "col-md-8 description future"
         })
-    }
-
+    };
 });
+
+    $(document).on("click", ".saveBtn",  function (event) {
+        event.preventDefault();
+        var index = $(this).siblings(".future")
+        console.log(index);
+        localStorage.setItem("Task "+ index[0].id, index[0].value);
+    });
+
+
+
+
+
