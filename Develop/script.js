@@ -3,55 +3,55 @@ var dayHours = [
         id: "0",
         hour: "09:00 am",
         time: "09",
-        event: ""
+        task: ""
     },
     {
         id: "1",
         hour: "10:00 am",
         time: "10",
-        event: ""
+        task: ""
     },
     {
         id: "2",
         hour: "11:00 am",
         time: "11",
-        event: ""
+        task: ""
     },
     {
         id: "3",
         hour: "12:00 pm",
         time: "12",
-        event: ""
+        task: ""
     },
     {
         id: "4",
         hour: "01:00 pm",
         time: "13",
-        event: ""
+        task: ""
     },
     {
         id: "5",
         hour: "02:00 pm",
         time: "14",
-        event: ""
+        task: ""
     },
     {
         id: "6",
         hour: "03:00 pm",
         time: "15",
-        event: ""
+        task: ""
     },
     {
         id: "7",
         hour: "04:00 pm",
         time: "16",
-        event: ""
+        task: ""
     },
     {
         id: "8",
         hour: "05:00 pm",
         time: "17",
-        event: ""
+        task: ""
     },
 
 ]
@@ -100,14 +100,29 @@ $.each(dayHours, function (i, Hours) {
     };
 });
 
-    $(document).on("click", ".saveBtn",  function (event) {
-        event.preventDefault();
-        var index = $(this).siblings(".future")
-        console.log(index);
-        localStorage.setItem("Task "+ index[0].id, index[0].value);
+
+function saveTask() {
+    localStorage.setItem("MyDay ", JSON.stringify(dayHours));
+};
+
+function displayTask() {
+    $.each(dayHours, function (i, futureHours) {
+        $(`#${futureHours.id}`).val(futureHours.task);
+
     });
+};
+
+$(document).on("click", ".saveBtn", function (event) {
+    event.preventDefault();
+
+    var index = $(this).siblings(".future").attr("id");
+
+    dayHours[index].task = $(this).siblings(".future").val();
+
+    displayTask();
+    saveTask();
 
 
-
+});
 
 
