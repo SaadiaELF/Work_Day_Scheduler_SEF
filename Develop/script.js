@@ -102,7 +102,7 @@ $.each(dayHours, function (i, Hours) {
 
 
 function saveTask() {
-    localStorage.setItem("MyDay ", JSON.stringify(dayHours));
+    localStorage.setItem("MyDay", JSON.stringify(dayHours));
 };
 
 function displayTask() {
@@ -112,16 +112,27 @@ function displayTask() {
     });
 };
 
+function displaystorage() {
+    var newDayHours = JSON.parse(localStorage.getItem("MyDay"));
+
+    if (newDayHours) {
+        dayHours = newDayHours;
+    };
+
+    saveTask();
+    displayTask();
+};
+
+displaystorage();
+
 $(document).on("click", ".saveBtn", function (event) {
     event.preventDefault();
 
     var index = $(this).siblings(".future").attr("id");
-
     dayHours[index].task = $(this).siblings(".future").val();
 
     displayTask();
     saveTask();
-
 
 });
 
