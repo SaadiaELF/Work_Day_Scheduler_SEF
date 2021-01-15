@@ -99,8 +99,8 @@ This file is used to create a dynamic website using functions to create a simple
 
 ## 8. URLs
 
-* The URL of the deployed application : 
+* The URL of the deployed application : https://saadiaelf.github.io/Work_Day_Scheduler_SEF/
 
-* The URL of the GitHub repository: 
+* The URL of the GitHub repository: https://github.com/SaadiaELF/Work_Day_Scheduler_SEF.git
 
 -----------------------------------------------------------------------------------------------------------------------
