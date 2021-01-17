@@ -8,7 +8,7 @@ Table of content :
 4. CSS file
 5. Bootsrap framework
 6. JQuery file
-7. Screenshots
+7. Demonstration
 8. URLs 
 
 -----------------------------------------------------------------------------------------------------------------------
@@ -89,11 +89,9 @@ This file is used to create a dynamic website using functions to create a simple
 
 -----------------------------------------------------------------------------------------------------------------------
 
-## 7. Screenshots :
+## 7. Demonstration :
 
-![Screenshot01](./Assets/Screenshot01.JPG)
-![Screenshot02](./Assets/Screenshot02.JPG)    
-![Screenshot03](./Assets/Screenshot03.JPG)
+![Demo](./Assets/Demo.gif)
 
 -----------------------------------------------------------------------------------------------------------------------
 
