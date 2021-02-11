@@ -76,14 +76,14 @@ $.each(dayHours, function (i, Hours) {
     // creating a new div to hold the first column that displays the hours
     // appending this new div to row div
     var hoursCol = $("<div>");
-    hoursCol.attr({ "class": "col-md-2 hour time-block" });
+    hoursCol.attr({ "class": "col-md-2 col-2 hour time-block" });
     hoursCol.text(Hours.hour);
     (row).append(hoursCol);
 
     // creating a textarea to hold the second column that displays the editable tasks
     // appending this textarea to the row div
     var taskCol = $("<textarea>");
-    taskCol.attr({ "class": "col-md-8 description" });
+    taskCol.attr({ "class": "col-md-8 col-8 description" });
     taskCol.attr("id", Hours.id);
     (row).append(taskCol);
 
@@ -91,22 +91,22 @@ $.each(dayHours, function (i, Hours) {
     // appending this button to the row div
     var saveBtnCol = $("<button>");
     var saveBtn = $("<i class='far fa-save fa-2x'></i>")
-    saveBtnCol.attr({ "class": "col-md-1 saveBtn" });
+    saveBtnCol.attr({ "class": "col-md-1 col-2 saveBtn" });
     (saveBtnCol).append(saveBtn);
     (row).append(saveBtnCol);
 
     // creating a color-code for the textarea to indicate whether it is in the past, present, or future 
     if (Hours.time < moment().format("HH")) {
         taskCol.attr({
-            "class": " col-md-8 description past",
+            "class": " col-md-8 col-8 description past",
         })
     } else if (Hours.time === moment().format("HH")) {
         taskCol.attr({
-            "class": "col-md-8 description present"
+            "class": "col-md-8 col-8 description present"
         })
     } else if (Hours.time > moment().format("HH")) {
         taskCol.attr({
-            "class": "col-md-8 description future"
+            "class": "col-md-8 col-8  description future"
         })
     };
 
