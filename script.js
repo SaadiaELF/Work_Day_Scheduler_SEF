@@ -90,7 +90,7 @@ $.each(dayHours, function (i, Hours) {
     // creating a button to hold the last column that displays the button to save tasks
     // appending this button to the row div
     var saveBtnCol = $("<button>");
-    var saveBtn = $("<i class='far fa-save fa-lg'></i>")
+    var saveBtn = $("<i class='far fa-save fa-2x'></i>")
     saveBtnCol.attr({ "class": "col-md-1 saveBtn" });
     (saveBtnCol).append(saveBtn);
     (row).append(saveBtnCol);
