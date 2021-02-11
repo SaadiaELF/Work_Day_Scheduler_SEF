@@ -72,3 +72,10 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
+@media (max-width: 768px) {
+  .time-block{
+    font-size: 1rem;
+    padding-top: 25px;
+  }
+ }
